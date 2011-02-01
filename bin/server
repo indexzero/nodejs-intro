@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+var sys = require('sys'),
+    path = require('path'),
+    argv = require('optimist').argv;
+    
+var help = [
+    "usage: server [options]",
+    "",
+    "Runs the demo pinpoint server at the appropriate stage in development",
+    "",
+    "options:",
+    "  -p             Port that you want the home server to run on     [8000]",
+    "  -t, --target   Target stage for pinpoint development            [00getting-started]",
+    "  -h, --help     You're staring at it",
+].join('\n');
+
+if (argv.h || argv.help) {
+  return sys.puts(help);
+}
+
+var port = argv.p || 8000,
+    target = argv.t || argv.target || '00getting-started';
+
+//
+// Unshift the target path so that we can require('pinpoint')
+//
+require.paths.unshift(path.join(__dirname, '..', 'lib', target));
+
+var pinpoint = require('pinpoint');
+pinpoint.createServer(port);
+
+sys.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + port);
