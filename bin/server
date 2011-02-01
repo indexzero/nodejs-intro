@@ -13,6 +13,7 @@ var help = [
     "  -p             Port that you want the home server to run on      [8000]",
     "  -t, --target   Target stage for pinpoint development             [00getting-started]",
     "  -s, --setup    Indicates we should configure the database first  [false]",
+    "  -a, --auth     user:password combo to use for HTTP Basic Auth    [none]",
     "  -h, --help     You're staring at it",
 ].join('\n');
 
@@ -22,7 +23,8 @@ if (argv.h || argv.help) {
 
 var target, options = {
   port: argv.p || 8000,
-  setup: argv.s || argv.setup || false
+  setup: argv.s || argv.setup || false, 
+  basicAuth: argv.a || argv.auth || null
 };
 
 target = argv.t || argv.target || '00getting-started';
