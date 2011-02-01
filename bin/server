@@ -10,8 +10,9 @@ var help = [
     "Runs the demo pinpoint server at the appropriate stage in development",
     "",
     "options:",
-    "  -p             Port that you want the home server to run on     [8000]",
-    "  -t, --target   Target stage for pinpoint development            [00getting-started]",
+    "  -p             Port that you want the home server to run on      [8000]",
+    "  -t, --target   Target stage for pinpoint development             [00getting-started]",
+    "  -s, --setup    Indicates we should configure the database first  [false]",
     "  -h, --help     You're staring at it",
 ].join('\n');
 
@@ -19,8 +20,12 @@ if (argv.h || argv.help) {
   return sys.puts(help);
 }
 
-var port = argv.p || 8000,
-    target = argv.t || argv.target || '00getting-started';
+var target, options = {
+  port: argv.p || 8000,
+  setup: argv.s || argv.setup || false
+};
+
+target = argv.t || argv.target || '00getting-started';
 
 //
 // Unshift the target path so that we can require('pinpoint')
@@ -28,6 +33,11 @@ var port = argv.p || 8000,
 require.paths.unshift(path.join(__dirname, '..', 'lib', target));
 
 var pinpoint = require('pinpoint');
-pinpoint.createServer(port);
+pinpoint.start(options, function (err, server) {
+  if (err) {
+    return sys.puts('Error starting pinpoint server: ' + err.message);
+  }
+  
+  sys.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + options.port);
+});
 
-sys.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + port);
