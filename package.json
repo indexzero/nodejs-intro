@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-intro",
+  "description": "My introduction presentation to node.js along with sample code at various stages of building a simple RESTful web service with journey, cradle, winston, optimist, and http-console.",
+  "version": "0.1.1",
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "repository": {
+      "type": "git",
+      "url": "http://github.com/indexzero/nodejs-intro.git" 
+  },
+  "keywords": ["bookmarks", "webservice", "tutorial", "nodejs"],
+  "dependencies": {
+    "cradle": ">= 0.5.2",
+    "journey": ">= 0.4.0-pre",
+    "http-console": ">= 0.6.0",
+    "optimist": ">= 0.1.5",
+    "winston": ">= 0.2.1"
+  },
+  "bin": { "nodejs-intro": "./bin/server" },
+  "main": "./lib/03authentication/pinpoint",
+  "engines": { "node": ">= 0.4.0" }
+}
