@@ -29,12 +29,7 @@ var target, options = {
 
 target = argv.t || argv.target || '00getting-started';
 
-//
-// Unshift the target path so that we can require('pinpoint')
-//
-require.paths.unshift(path.join(__dirname, '..', 'lib', target));
-
-var pinpoint = require('pinpoint');
+var pinpoint = require(path.join('..', 'lib', target, 'pinpoint'));
 pinpoint.start(options, function (err, server) {
   if (err) {
     return sys.puts('Error starting pinpoint server: ' + err.message);
