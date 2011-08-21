@@ -20,6 +20,9 @@ vows.describe('00getting-started').addBatch(helpers.requiresInit(8000)).addBatch
     "should respond with 501 - Not implemented": function (err, res, body) {
       assert.isNull(err);
       assert.equal(res.statusCode, 501);
+    },
+    "should respond with 'not implemented'": function (err, res, body) {
+      assert.isNull(err);
       assert.equal(JSON.parse(body).message, 'not implemented');
     }
   }
