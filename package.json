@@ -1,7 +1,7 @@
 {
   "name": "nodejs-intro",
   "description": "My introduction presentation to node.js along with sample code at various stages of building a simple RESTful web service with journey, cradle, winston, optimist, and http-console.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "repository": {
       "type": "git",
@@ -9,15 +9,18 @@
   },
   "keywords": ["bookmarks", "webservice", "tutorial", "nodejs"],
   "dependencies": {
-    "cradle": ">= 0.5.2",
+    "cradle": "0.5.x",
     "journey": ">= 0.4.0-pre",
-    "http-console": ">= 0.6.0",
-    "optimist": ">= 0.1.5",
-    "winston": ">= 0.2.1"
+    "http-console": "0.6.x",
+    "optimist": "0.2.x",
+    "winston": "0.5.x"
   },
   "devDependencies": {
-    "vows": "0.5.9",
-    "request": "2.0.x"
+    "vows": "0.5.x",
+    "request": "2.x.x"
+  },
+  "scripts": {
+    "test": "vows --spec --isolate"
   },
   "bin": { "nodejs-intro": "./bin/server" },
   "main": "./lib/03authentication/pinpoint",
