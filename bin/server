@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var sys = require('sys'),
+var util = require('util'),
     path = require('path'),
     argv = require('optimist').argv;
     
@@ -18,7 +18,7 @@ var help = [
 ].join('\n');
 
 if (argv.h || argv.help) {
-  return sys.puts(help);
+  return util.puts(help);
 }
 
 var target, options = {
@@ -32,9 +32,9 @@ target = argv.t || argv.target || '00getting-started';
 var pinpoint = require(path.join('..', 'lib', target, 'pinpoint'));
 pinpoint.start(options, function (err, server) {
   if (err) {
-    return sys.puts('Error starting pinpoint server: ' + err.message);
+    return util.puts('Error starting pinpoint server: ' + err.message);
   }
   
-  sys.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + options.port);
+  util.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + options.port);
 });
 
