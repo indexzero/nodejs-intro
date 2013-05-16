@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // A simple ‘hello world’ server in node.js
 var sys = require('sys'),
     http = require('http');
