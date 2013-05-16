@@ -3,11 +3,8 @@
 var vows = require('vows'),
     assert = require('assert'),
     request = require('request'),
-    helpers = require('./../helpers');
-    
-helpers.addPinpoint('00getting-started');
-
-var pinpoint = require('../../lib/00getting-started/pinpoint');
+    helpers = require('./helpers'),
+    pinpoint = require('../lib/00getting-started/pinpoint');
 
 vows.describe('00getting-started').addBatch(helpers.requiresInit(8000)).addBatch({
   "A request to the pinpoint server": {

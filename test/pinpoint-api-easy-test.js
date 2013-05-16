@@ -3,11 +3,8 @@
 var vows = require('vows'),
     assert = require('assert'),
     APIeasy = require('api-easy'),
-    helpers = require('./../helpers');
-    
-helpers.addPinpoint('00getting-started');
-
-var pinpoint = require('../../lib/00getting-started/pinpoint');
+    helpers = require('./helpers'),
+    pinpoint = require('../lib/00getting-started/pinpoint');
 
 var tests = APIeasy.describe('00getting-started');
 

@@ -3,11 +3,7 @@ var helpers = exports;
 
 var assert = require('assert'),
     path = require('path'),
-    pinpoint;
-
-helpers.addPinpoint = function (target) {
-  pinpoint = require(path.join(__dirname, '..', 'lib', target, 'pinpoint'));
-};
+    pinpoint = require('../lib/pinpoint');
 
 helpers.requiresInit = function (port) {
   return {
