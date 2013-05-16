@@ -2,7 +2,8 @@
 
 var util = require('util'),
     path = require('path'),
-    argv = require('optimist').argv;
+    argv = require('optimist').argv,
+    pinpoint = require('../lib/pinpoint');
     
 var help = [
     "usage: server [options]",
@@ -11,30 +12,24 @@ var help = [
     "",
     "options:",
     "  -p             Port that you want the home server to run on      [8000]",
-    "  -t, --target   Target stage for pinpoint development             [00getting-started]",
     "  -s, --setup    Indicates we should configure the database first  [false]",
     "  -a, --auth     user:password combo to use for HTTP Basic Auth    [none]",
     "  -h, --help     You're staring at it",
 ].join('\n');
 
 if (argv.h || argv.help) {
-  return util.puts(help);
+  return console.log(help);
 }
 
-var target, options = {
-  port: argv.p || 8000,
-  setup: argv.s || argv.setup || false, 
-  basicAuth: argv.a || argv.auth || null
-};
-
-target = argv.t || argv.target || '00getting-started';
-
-var pinpoint = require(path.join('..', 'lib', target, 'pinpoint'));
-pinpoint.start(options, function (err, server) {
+pinpoint.start({
+  port:      argv.p || 8000,
+  setup:     argv.s || argv.setup || false, 
+  basicAuth: argv.a || argv.auth  || null
+}, function (err, server) {
   if (err) {
-    return util.puts('Error starting pinpoint server: ' + err.message);
+    return console.log('Error starting pinpoint server: ' + err.message);
   }
   
-  util.puts('Pinpoint demo server listening for ' + target + ' on http://127.0.0.1:' + options.port);
+  console.log('Pinpoint demo server on http://127.0.0.1:' + options.port);
 });
 
