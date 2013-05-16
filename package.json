@@ -11,7 +11,6 @@
   "dependencies": {
     "cradle": "0.6.x",
     "director": "~1.2.0",
-    "http-console": "0.6.x",
     "optimist": "0.4.x",
     "winston": "0.7.x"
   },
