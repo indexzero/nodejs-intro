@@ -11,7 +11,8 @@
   "dependencies": {
     "director": "~1.2.0",
     "optimist": "0.4.x",
-    "winston": "0.7.x"
+    "winston": "0.7.x",
+    "union": "~0.3.2"
   },
   "devDependencies": {
     "api-easy": "~0.3.8",
