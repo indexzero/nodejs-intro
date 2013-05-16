@@ -7,7 +7,7 @@ var vows = require('vows'),
     
 helpers.addPinpoint('00getting-started');
 
-var pinpoint = require('pinpoint');
+var pinpoint = require('../../lib/00getting-started/pinpoint');
 
 var tests = APIeasy.describe('00getting-started');
 

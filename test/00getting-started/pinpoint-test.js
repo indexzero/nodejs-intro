@@ -7,7 +7,7 @@ var vows = require('vows'),
     
 helpers.addPinpoint('00getting-started');
 
-var pinpoint = require('pinpoint');
+var pinpoint = require('../../lib/00getting-started/pinpoint');
 
 vows.describe('00getting-started').addBatch(helpers.requiresInit(8000)).addBatch({
   "A request to the pinpoint server": {
