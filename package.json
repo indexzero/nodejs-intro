@@ -8,22 +8,6 @@
     "url": "http://github.com/indexzero/nodejs-intro.git"
   },
   "keywords": ["bookmarks", "webservice", "tutorial", "nodejs"],
-  "dependencies": {
-    "cradle": "0.6.x",
-    "director": "~1.2.0",
-    "http-console": "0.6.x",
-    "optimist": "0.4.x",
-    "winston": "0.7.x"
-  },
-  "devDependencies": {
-    "api-easy": "~0.3.8",
-    "vows": "0.7.x",
-    "request": "2.x.x"
-  },
-  "scripts": {
-    "test": "vows --spec --isolate"
-  },
   "bin": { "nodejs-intro": "./bin/server" },
-  "main": "./lib/03authentication/pinpoint",
   "engines": { "node": ">= 0.6.0" }
 }
