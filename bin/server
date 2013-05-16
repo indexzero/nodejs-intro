@@ -21,8 +21,10 @@ if (argv.h || argv.help) {
   return console.log(help);
 }
 
+var port = argv.p || 8000;
+
 pinpoint.start({
-  port:      argv.p || 8000,
+  port:      port,
   setup:     argv.s || argv.setup || false, 
   basicAuth: argv.a || argv.auth  || null
 }, function (err, server) {
@@ -30,6 +32,6 @@ pinpoint.start({
     return console.log('Error starting pinpoint server: ' + err.message);
   }
   
-  console.log('Pinpoint demo server on http://127.0.0.1:' + options.port);
+  console.log('Pinpoint demo server on http://127.0.0.1:' + port);
 });
 
