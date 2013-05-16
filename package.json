@@ -9,14 +9,15 @@
   },
   "keywords": ["bookmarks", "webservice", "tutorial", "nodejs"],
   "dependencies": {
-    "cradle": "0.5.x",
+    "cradle": "0.6.x",
     "journey": ">= 0.4.0-pre",
     "http-console": "0.6.x",
-    "optimist": "0.2.x",
-    "winston": "0.5.x"
+    "optimist": "0.4.x",
+    "winston": "0.7.x"
   },
   "devDependencies": {
-    "vows": "0.5.x",
+    "api-easy": "~0.3.8",
+    "vows": "0.7.x",
     "request": "2.x.x"
   },
   "scripts": {
