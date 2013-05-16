@@ -4,7 +4,7 @@ var vows = require('vows'),
     assert = require('assert'),
     APIeasy = require('api-easy'),
     helpers = require('./helpers'),
-    pinpoint = require('../lib/00getting-started/pinpoint');
+    pinpoint = require('../lib/pinpoint');
 
 var tests = APIeasy.describe('00getting-started');
 
